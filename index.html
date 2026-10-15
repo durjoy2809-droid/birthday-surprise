@@ -1,0 +1,431 @@
+‎<!DOCTYPE html>
+‎<html lang="bn">
+‎<head>
+‎  <meta charset="UTF-8">
+‎  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+‎
+‎  <title>For You ❤️</title>
+‎
+‎  <link rel="preconnect" href="https://fonts.googleapis.com">
+‎  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+‎
+‎  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+‎
+‎  <link rel="stylesheet" href="style.css">
+‎</head>
+‎
+‎<body>
+‎
+‎  <div id="stars"></div>
+‎  <canvas id="confetti"></canvas>
+‎
+‎  <!-- MUSIC -->
+‎  <audio id="music" src="birthday.mp3" loop></audio>
+‎
+‎
+‎  <!-- =========================
+‎       01 — WELCOME
+‎  ========================== -->
+‎
+‎  <section class="screen active" id="welcome">
+‎
+‎    <div class="glass">
+‎
+‎      <div class="mini-heart">♡</div>
+‎
+‎      <p class="eyebrow">
+‎        A LITTLE SURPRISE FOR YOU
+‎      </p>
+‎
+‎      <h1>
+‎        Are You<br>
+‎        <span>Ready?</span>
+‎      </h1>
+‎
+‎      <p class="sub">
+‎        তোমার জন্য কিছু একটা
+‎        অপেক্ষা করছে...
+‎      </p>
+‎
+‎      <button id="readyBtn">
+‎        I'm Ready ✨
+‎      </button>
+‎
+‎    </div>
+‎
+‎  </section>
+‎
+‎
+‎  <!-- =========================
+‎       02 — NAME REVEAL
+‎  ========================== -->
+‎
+‎  <section class="screen" id="nameScreen">
+‎
+‎    <div class="glass">
+‎
+‎      <div class="sparkle">✦</div>
+‎
+‎      <p class="eyebrow">
+‎        THIS MESSAGE IS JUST FOR
+‎      </p>
+‎
+‎      <h1 class="name-reveal" id="nameReveal">
+‎        You
+‎      </h1>
+‎
+‎      <p class="sub">
+‎        তাই একটু মন দিয়ে দেখো... ❤️
+‎      </p>
+‎
+‎      <button id="continueBtn">
+‎        Continue →
+‎      </button>
+‎
+‎    </div>
+‎
+‎  </section>
+‎
+‎
+‎  <!-- =========================
+‎       03 — GIFT
+‎  ========================== -->
+‎
+‎  <section class="screen" id="giftScreen">
+‎
+‎    <div class="glass">
+‎
+‎      <p class="eyebrow">
+‎        YOUR SURPRISE IS HERE
+‎      </p>
+‎
+‎      <div class="gift-box" id="giftBox">
+‎
+‎        <div class="gift-lid"></div>
+‎
+‎        <div class="gift-body"></div>
+‎
+‎        <div class="gift-ribbon vertical"></div>
+‎
+‎        <div class="gift-ribbon horizontal"></div>
+‎
+‎        <div class="bow">
+‎          🎀
+‎        </div>
+‎
+‎      </div>
+‎
+‎      <h2>
+‎        এই Gift Box-টা খুলবে?
+‎      </h2>
+‎
+‎      <p class="sub">
+‎        Tap the gift 🎁
+‎      </p>
+‎
+‎    </div>
+‎
+‎  </section>
+‎
+‎
+‎  <!-- =========================
+‎       04 — COUNTDOWN
+‎  ========================== -->
+‎
+‎  <section class="screen" id="countdownScreen">
+‎
+‎    <div class="countdown-wrap">
+‎
+‎      <p>
+‎        Something beautiful is coming...
+‎      </p>
+‎
+‎      <div id="countdown">
+‎        3
+‎      </div>
+‎
+‎    </div>
+‎
+‎  </section>
+‎
+‎
+‎  <!-- =========================
+‎       05 — BIRTHDAY CAKE
+‎  ========================== -->
+‎
+‎  <section class="screen" id="cakeScreen">
+‎
+‎    <div class="cake-card">
+‎
+‎      <p class="eyebrow">
+‎        MAKE A WISH
+‎      </p>
+‎
+‎      <h1>
+‎        Happy Birthday!
+‎      </h1>
+‎
+‎      <h2 id="cakeName">
+‎        Dear You ❤️
+‎      </h2>
+‎
+‎      <div class="cake">
+‎
+‎        <div class="flame" id="flame">
+‎          🔥
+‎        </div>
+‎
+‎        <div class="candle">
+‎          🕯️
+‎        </div>
+‎
+‎        <div class="cake-top"></div>
+‎        <div class="cake-middle"></div>
+‎        <div class="cake-bottom"></div>
+‎
+‎      </div>
+‎
+‎      <p id="blowText">
+‎        চোখ বন্ধ করে একটা Wish করো...
+‎      </p>
+‎
+‎      <button id="blowBtn">
+‎        💨 Blow the Candle
+‎      </button>
+‎
+‎    </div>
+‎
+‎  </section>
+‎
+‎
+‎  <!-- =========================
+‎       06 — WISH
+‎  ========================== -->
+‎
+‎  <section class="screen" id="wishScreen">
+‎
+‎    <div class="glass">
+‎
+‎      <div class="big-heart">
+‎        ❤️
+‎      </div>
+‎
+‎      <p class="eyebrow">
+‎        HAPPY BIRTHDAY
+‎      </p>
+‎
+‎      <h1 id="wishTitle">
+‎        Dear You
+‎      </h1>
+‎
+‎      <p class="wish-text">
+‎        তোমার জীবনের প্রতিটি নতুন দিন
+‎        আগের দিনের চেয়ে আরও সুন্দর হোক।
+‎      </p>
+‎
+‎      <p class="wish-text">
+‎        তোমার সব স্বপ্ন পূরণ হোক,
+‎        সবসময় ভালো থেকো,
+‎        হাসিখুশি থেকো। ❤️
+‎      </p>
+‎
+‎      <button id="photoBtn">
+‎        📸 একটা ছবি দেখো
+‎      </button>
+‎
+‎    </div>
+‎
+‎  </section>
+‎
+‎
+‎  <!-- =========================
+‎       07 — PHOTO
+‎  ========================== -->
+‎
+‎  <section class="screen" id="photoScreen">
+‎
+‎    <div class="photo-card">
+‎
+‎      <p class="eyebrow">
+‎        A BEAUTIFUL MOMENT
+‎      </p>
+‎
+‎      <div class="photo-frame">
+‎
+‎        <img
+‎          src="photo.jpg"
+‎          id="personPhoto"
+‎          alt="Birthday Photo"
+‎        >
+‎
+‎      </div>
+‎
+‎      <h2 id="photoName">
+‎        You ❤️
+‎      </h2>
+‎
+‎      <p>
+‎        কিছু মানুষকে ছবিতে দেখা যায়,
+‎        কিন্তু তাদের গুরুত্ব ছবির চেয়েও অনেক বেশি।
+‎      </p>
+‎
+‎      <button id="letterBtn">
+‎        💌 Open Your Letter
+‎      </button>
+‎
+‎    </div>
+‎
+‎  </section>
+‎
+‎
+‎  <!-- =========================
+‎       08 — LETTER
+‎  ========================== -->
+‎
+‎  <section class="screen" id="letterScreen">
+‎
+‎    <div class="letter-card">
+‎
+‎      <div class="envelope">
+‎        💌
+‎      </div>
+‎
+‎      <p class="eyebrow">
+‎        A LETTER FOR YOU
+‎      </p>
+‎
+‎      <h1>
+‎        Dear <span id="letterName">You</span>
+‎      </h1>
+‎
+‎      <div class="divider"></div>
+‎
+‎      <p id="personalMessage">
+‎        আজকের দিনটা শুধু তোমার জন্মদিন নয়,
+‎        আজকের দিনটা পৃথিবীতে তোমার
+‎        আসার দিন।
+‎      </p>
+‎
+‎      <p>
+‎        তোমার সামনে যেন সবসময়
+‎        সুন্দর কিছু অপেক্ষা করে থাকে।
+‎        জীবনের প্রতিটি স্বপ্ন পূরণ হোক।
+‎      </p>
+‎
+‎      <p>
+‎        আর তোমার মুখের হাসিটা যেন
+‎        কখনো হারিয়ে না যায়। ❤️
+‎      </p>
+‎
+‎      <div class="signature">
+‎
+‎        With love,
+‎
+‎        <strong id="sender">
+‎          Someone Special
+‎        </strong>
+‎
+‎      </div>
+‎
+‎      <button id="secretBtn">
+‎        ✨ One Last Surprise
+‎      </button>
+‎
+‎    </div>
+‎
+‎  </section>
+‎
+‎
+‎  <!-- =========================
+‎       09 — SECRET
+‎  ========================== -->
+‎
+‎  <section class="screen" id="secretScreen">
+‎
+‎    <div class="secret-card">
+‎
+‎      <div class="secret-heart">
+‎        ❤️
+‎      </div>
+‎
+‎      <p class="eyebrow">
+‎        ONE LAST THING
+‎      </p>
+‎
+‎      <h1>
+‎        Just Remember...
+‎      </h1>
+‎
+‎      <p id="finalText">
+‎        তুমি যতটা ভাবো,
+‎        তার থেকেও অনেক বেশি special।
+‎      </p>
+‎
+‎      <div class="final-cake">
+‎        🎂
+‎      </div>
+‎
+‎      <h2>
+‎        Happy Birthday,
+‎        <span id="finalName">
+‎          You
+‎        </span>! 🎉
+‎      </h2>
+‎
+‎      <button id="finalBtn">
+‎        🎉 Celebrate!
+‎      </button>
+‎
+‎    </div>
+‎
+‎  </section>
+‎
+‎
+‎  <!-- =========================
+‎       10 — FINAL
+‎  ========================== -->
+‎
+‎  <section class="screen" id="finalScreen">
+‎
+‎    <div class="final-content">
+‎
+‎      <div class="final-emoji">
+‎        🎉
+‎      </div>
+‎
+‎      <h1>
+‎        HAPPY<br>
+‎        <span>BIRTHDAY!</span>
+‎      </h1>
+‎
+‎      <h2 id="finalBirthdayName">
+‎        You ❤️
+‎      </h2>
+‎
+‎      <p>
+‎        May your life always be
+‎        filled with happiness,
+‎        love and beautiful moments.
+‎      </p>
+‎
+‎      <div class="final-sign">
+‎        With love,<br>
+‎        <strong id="finalSender">
+‎          Someone Special
+‎        </strong>
+‎      </div>
+‎
+‎      <button onclick="location.reload()">
+‎        🔄 Watch Again
+‎      </button>
+‎
+‎    </div>
+‎
+‎  </section>
+‎
+‎
+‎  <script src="script.js"></script>
+‎
+‎</body>
+‎</html>
+‎
